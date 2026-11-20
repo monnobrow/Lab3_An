@@ -1,0 +1,27 @@
+# Сборка
+build/
+*.o
+*.a
+
+# Покрытие
+*.gcda
+*.gcno
+*.info
+coverage_html/
+build/coverage_report/
+
+# Тестовые бинарники
+*.bin
+test_*.bin
+
+# IDE
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# lint
+lint/

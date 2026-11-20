@@ -1,0 +1,24 @@
+digraph UML {
+graph [bgcolor="white", splines=true, overlap=true];
+node [shape=plain, fontname="DejaVu Sans", fontsize=10];
+edge [fontname="DejaVu Sans", fontsize=9, color="#25374c"];
+Array [pos="402,100!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>Array</B></TD></TR><TR><TD ALIGN="LEFT">− data, size, mesto</TD></TR><TR><TD ALIGN="LEFT">+ MAddEnd, MGet, MDeleteIndex</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+SinglList [pos="95,510!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>SinglList</B></TD></TR><TR><TD ALIGN="LEFT">− head</TD></TR><TR><TD ALIGN="LEFT">+ FAddFirst, FGet, FDeleteFirst</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+SharedNode [pos="285,420!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>Node</B></TD></TR><TR><TD ALIGN="LEFT">− chislo, next</TD></TR></TABLE>>];
+SinglList -> SharedNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+DoubleList [pos="95,315!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>DoubleList</B></TD></TR><TR><TD ALIGN="LEFT">− head, tail</TD></TR><TR><TD ALIGN="LEFT">+ LAddEnd, LGet, LDeleteEnd</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+LNode [pos="95,220!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>LNode</B></TD></TR><TR><TD ALIGN="LEFT">− chislo, next, prev</TD></TR></TABLE>>];
+DoubleList -> LNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+Queue [pos="475,510!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>Queue</B></TD></TR><TR><TD ALIGN="LEFT">− head, tail</TD></TR><TR><TD ALIGN="LEFT">+ QPush, QPop, QFront</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+Queue -> SharedNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+Stack [pos="285,510!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>Stack</B></TD></TR><TR><TD ALIGN="LEFT">− head</TD></TR><TR><TD ALIGN="LEFT">+ SPush, SPop, STop</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+Stack -> SharedNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+Tree [pos="285,315!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>Tree</B></TD></TR><TR><TD ALIGN="LEFT">− root</TD></TR><TR><TD ALIGN="LEFT">+ TAdd, TFind, TDelete</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+TNode [pos="285,220!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>TNode</B></TD></TR><TR><TD ALIGN="LEFT">− data, height, left, right</TD></TR></TABLE>>];
+Tree -> TNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+HashTable [pos="475,315!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>HashTable</B></TD></TR><TR><TD ALIGN="LEFT">− data, size, mesto</TD></TR><TR><TD ALIGN="LEFT">+ HInsert, HGet, HDelete</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+HNode [pos="475,220!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>HNode</B></TD></TR><TR><TD ALIGN="LEFT">− key, value, next</TD></TR></TABLE>>];
+HashTable -> HNode [dir=both,arrowtail=diamond,arrowhead=none,headlabel="0..*",labeldistance=2];
+OpenTable [pos="175,100!",label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e6edf6"><B>OpenTable</B></TD></TR><TR><TD ALIGN="LEFT">− keys, values, states: Array*</TD></TR><TR><TD ALIGN="LEFT">+ OInsert, OGet, ODelete</TD></TR><TR><TD ALIGN="LEFT">+ Save, Load</TD></TR></TABLE>>];
+OpenTable -> Array [dir=both,arrowtail=diamond,arrowhead=none,label="3"];
+}
